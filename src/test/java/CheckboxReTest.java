@@ -1,9 +1,10 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CheckboxReTest extends BaseTest {
 
-    @Test
+public class CheckboxReTest extends BaseTest {
+//(groups = {"Smoke","4323"}, description = "TextBoxTest")
+    @Test(groups = {"E2E_Test", "1234"},description = "checkBoxTest")
     public void checkBoxTest() {
         driver.get("https://demoqa.com/checkbox");
 

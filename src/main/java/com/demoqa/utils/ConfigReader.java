@@ -13,7 +13,7 @@ public class ConfigReader {
 
     static {
         try {
-            String path = "/Users/owner/Desktop/DemoQAWinter24/src/main/resources/app.properties";
+            String path = "src/main/resources/app.properties";
             FileInputStream fileInputStream = new FileInputStream(path);
             properties = new Properties();
             properties.load(fileInputStream);

@@ -1,12 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="E2e Suite">
+<suite name="E2E Suite">
     <test verbose="2" preserve-order="true" name="/Users/owner/Desktop/DemoQAWinter24">
         <classes>
-            <class name="ButtonTest"/>
-            <class name="FrameTest"/>
-            <class name="PracticFormTest"/>
             <class name="CheckboxReTest"/>
-            <class name="PracticeFormDataTest"/>
+
         </classes>
     </test>
 </suite>

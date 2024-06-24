@@ -1,45 +1,40 @@
 package com.demoqa.drivers;
-
 import com.demoqa.utils.ConfigReader;
 import org.openqa.selenium.WebDriver;
 
+
 public class DriverManager {
     private static WebDriver driver;
-
-    public static WebDriver getDriver() {
-        if (driver == null) {
-            switch (ConfigReader.getValue("browser").toLowerCase()) {
+    public static WebDriver getDriver(){
+        if(driver==null){
+            switch (ConfigReader.getValue("browser").toLowerCase()){
                 case "chrome":
-                    driver = ChromeWebDriver.loadChromeDriver();
+                    driver = ChromeWebDriver.LoadChromeDriver();
                     break;
                 case "firefox":
-                    driver = FireFoxWEbDriver.loadFirefoxDriver();
+//                    driver = FireFoxWebDriver.loadChromeDriver();
+                    // тут должен быть кейм дз
                     break;
-                case "edge":
-                    driver = EdgeWebdriver.loadEdgeDriver();
-                    break;
-                case "opera":
-                    driver = OperaWebDriver.loadOperaDriver();
-                    break;
-                case "safari":
-                    driver = SafariWebDriver.loadSafariDriver();
-                    break;
+
                 default:
-                    throw new IllegalArgumentException("You provided a wrong driver name: " + ConfigReader.getValue("browser"));
+                    throw new IllegalArgumentException("you provided wrong Driver name");
+
             }
         }
         return driver;
     }
-
-    public static void closeDriver() {
+    public static void closeDriver(){
         try {
-            if (driver != null) {
+            if (driver != null){
                 driver.close();
                 driver.quit();
-                driver = null;
+                driver=null;
+
+
             }
-        } catch (Exception e) {
-            System.err.println("Error while closing driver");
+
+        }catch (Exception e){
+            System.err.println("error white closing driver");
         }
     }
 }
